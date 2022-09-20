@@ -3,17 +3,17 @@
     <h2 class="titulo">BMI CALCULATOR</h2>
     <div class="row">
       <div class="col-lg-6">
-        <div class="fondoItem">
-          <div class="contenedor">
-            <i class="fa-solid fa-mars sexo"></i>
+        <div class="fondoItem "[ngClass]="{'sexoDesactivo': sexo === 'Femenino'}" >
+          <div class="contenedor" style="cursor: pointer;"(click)="masculino()">
+            <i class="fa-solid fa-mars sexo" ></i>
             <p>Masculino</p>
           </div>
         </div>
       </div>
       <div class="col-lg-6">
-        <div class="fondoItem">
-          <div class="contenedor">
-            <i class="fa-solid fa-venus sexo"></i>
+        <div class="fondoItem " [ngClass]="{'sexoDesactivo': sexo === 'Masculino'}">
+          <div class="contenedor" style="cursor: pointer;" (click)="femenino()">
+            <i class="fa-solid fa-venus sexo" ></i>
             <p>Femenino</p>
           </div>
         </div>
@@ -25,23 +25,47 @@
         <div class="fondoItem">
           <div class="contenedor">
             <p>Altura</p>
-            <div class="number">170</div>
-            <div>CM</div>
+            <div class="number">{{altura}}</div>
+           <span class="cm" >CM</span>
+
+           <input type="range" (input)="cambiarAltura($event)" [value]="altura" min="120" max="210" class="form-range" >
           </div>
+         
+          
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-6">
-        <div class="fondoItem">1</div>
+        <div class="fondoItem">
+          <div class="contenedor">
+            <p>Peso</p>
+            <div class="number">{{peso}}</div>
+            <div>
+              <i class="fa-solid fa-circle-plus plusminus" (click)="peso = peso +1" ></i>
+              <i class="fa-solid fa-circle-minus plusminus" (click)="peso = peso -1"></i>
+            </div>
+          </div>
+          
+        </div>
       </div>
       <div class="col-lg-6">
-        <div class="fondoItem">2</div>
+        <div class="fondoItem">
+          <div class="contenedor">
+            <p>Edad</p>
+            <div class="number">{{edad}}</div>
+            <div>
+              <i class="fa-solid fa-circle-plus plusminus" (click)="edad = edad +1" ></i>
+              <i class="fa-solid fa-circle-minus plusminus" (click)="edad = edad -1"></i>
+            </div>
+          </div>
+          
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
-        <button class="btn btn-primary btl-lg btn-block btn-color">
+        <button (click)="calcularBmi()" class="btn btn-primary btn-lg btn-block btn-color">
           Calcular
         </button>
       </div>

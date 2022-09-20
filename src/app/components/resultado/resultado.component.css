@@ -1,0 +1,23 @@
+.fondoItem{
+    background-color: rgb(48, 15, 15);
+    border-radius: 20px;
+    height: 430px;
+    padding: 10px;
+    color: white;
+}
+.resultado{
+    font-size:25px;
+    font-weight:700;
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:forestgreen;
+}
+
+.number {
+    font-size:75px;
+    padding-top:25px;
+    padding-bottom:25px;
+}
+.diagnostico{
+    margin: 20px;
+}
